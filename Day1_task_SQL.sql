@@ -1,4 +1,4 @@
-----------------------------------Creation of database----------------------------------
+----------------------------------Creation of database------------------------------------------
 
 --CREATE DATABASE SCHOOL
 --USE SCHOOL
@@ -7,7 +7,7 @@
 
 CREATE TABLE students(regno int,name varchar(20),age int,major varchar(20),marks int);
 
-----------------------------------Insertion of value into table----------------------------------
+----------------------------------Insertion of value into table-----------------------------------
 
 INSERT INTO students VALUES
 (3,'arun',19,'maths',90),
