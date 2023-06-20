@@ -1,0 +1,136 @@
+use car
+'switched to db car'
+db.specs.insertMany([{model:"swift",milage:18,price:1000000,engine:"petrol",airbags:2},{model:"innova",milage:12,price:2300000,engine:"disel",airbags:4},{model:"fortuner",milage:10,price:3000000,engine:"disel",airbags:6},{model:"city",milage:15,price:2200000,engine:"petrol",airbags:2}]);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("6492033921fcd94398390a68"),
+    '1': ObjectId("6492033921fcd94398390a69"),
+    '2': ObjectId("6492033921fcd94398390a6a"),
+    '3': ObjectId("6492033921fcd94398390a6b")
+  }
+}
+
+db.specs.insertOne({model:"amaze",milage:16,price:1700000,engine:"petrol",airbags:2});
+{
+  acknowledged: true,
+  insertedId: ObjectId("6492038821fcd94398390a6c")
+}
+
+
+
+db.specs.find();
+{
+  _id: ObjectId("6492033921fcd94398390a68"),
+  model: 'swift',
+  milage: 18,
+  price: 1000000,
+  engine: 'petrol',
+  airbags: 2
+}
+
+{
+  _id: ObjectId("6492033921fcd94398390a69"),
+  model: 'innova',
+  milage: 12,
+  price: 2300000,
+  engine: 'disel',
+  airbags: 4
+}
+
+{
+  _id: ObjectId("6492033921fcd94398390a6a"),
+  model: 'fortuner',
+  milage: 10,
+  price: 3000000,
+  engine: 'disel',
+  airbags: 6
+}
+
+{
+  _id: ObjectId("6492033921fcd94398390a6b"),
+  model: 'city',
+  milage: 15,
+  price: 2200000,
+  engine: 'petrol',
+  airbags: 2
+}
+
+{
+  _id: ObjectId("6492038821fcd94398390a6c"),
+  model: 'amaze',
+  milage: 16,
+  price: 1700000,
+  engine: 'petrol',
+  airbags: 2
+}
+
+
+
+db.specs.updateOne({model:"city"},{$set: {engine:"disel"}});
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+
+
+db.specs.find({model:"city"});
+{
+  _id: ObjectId("6492033921fcd94398390a6b"),
+  model: 'city',
+  milage: 15,
+  price: 2200000,
+  engine: 'disel',
+  airbags: 2
+}
+
+
+
+db.specs.deleteOne({model:"swift"});
+{
+  acknowledged: true,
+  deletedCount: 1
+}
+
+
+
+db.specs.find();
+{
+  _id: ObjectId("6492033921fcd94398390a69"),
+  model: 'innova',
+  milage: 12,
+  price: 2300000,
+  engine: 'disel',
+  airbags: 4
+}
+
+{
+  _id: ObjectId("6492033921fcd94398390a6a"),
+  model: 'fortuner',
+  milage: 10,
+  price: 3000000,
+  engine: 'disel',
+  airbags: 6
+}
+
+{
+  _id: ObjectId("6492033921fcd94398390a6b"),
+  model: 'city',
+  milage: 15,
+  price: 2200000,
+  engine: 'disel',
+  airbags: 2
+}
+
+{
+  _id: ObjectId("6492038821fcd94398390a6c"),
+  model: 'amaze',
+  milage: 16,
+  price: 1700000,
+  engine: 'petrol',
+  airbags: 2
+}
